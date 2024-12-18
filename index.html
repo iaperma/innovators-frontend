@@ -8,28 +8,28 @@
 
     <style>
         /* Global Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background: url('background1.jpg') no-repeat center center;
-            background-size: cover;
-            color: #333;
-            line-height: 1.6;
-            animation: backgroundCycle 25s infinite;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('background1.jpg') no-repeat center center;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+    animation: backgroundCycle 25s infinite;
+}
 
-        @keyframes backgroundCycle {
-            0% { background: url(building.jpg) no-repeat center center fixed; background-size: cover; }
-            25% { background: url(stud\ 3.jpg) no-repeat center center fixed; background-size: cover; }
-            50% { background: url(onwers.jpg) no-repeat center center fixed; background-size: cover; }
-            75% { background: url(bak.jpg) no-repeat center center fixed; background-size: cover; }
-            100% { background: url(library.jpg) no-repeat center center fixed; background-size: cover; }
-        }
+@keyframes backgroundCycle {
+    0% { background: url(building.jpg) no-repeat center center fixed; background-size: cover; }
+    25% { background: url(stud\ 3.jpg) no-repeat center center fixed; background-size: cover; }
+    50% { background: url(onwers.jpg) no-repeat center center fixed; background-size: cover; }
+    75% { background: url(bak.jpg) no-repeat center center fixed; background-size: cover; }
+    100% { background: url(library.jpg) no-repeat center center fixed; background-size: cover; }
+}
 
-        header {
-            display: flex;
+header {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     background: rgba(0, 0, 0, 0.8);
@@ -40,68 +40,66 @@
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     flex-wrap: wrap; /* Added to allow wrapping for small screens */
-        }
+}
 
-        header img {
-            height: 80px;
-        }
+header img {
+    height: 80px;
+}
 
-        nav {
-            display: flex;
+nav {
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-        }
+}
 
-        nav a {
-            color: #fff;
+nav a {
+    color: #fff;
     text-decoration: none;
     padding: 10px 15px;
     background: #007BFF;
     border-radius: 5px;
     transition: all 0.3s ease;
     font-size: 1rem;
-        }
+}
 
-        nav a:hover {
-            background: #0056b3;
-            transform: scale(1.1);
-        }
+nav a:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
 
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            animation: fadeIn 1.5s ease-in-out;
-        }
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .section {
-            margin: 30px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-        }
+.section {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
 
-        .section:hover {
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-        }
-        
+.section:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
 
-        /* Modify the gallery to be more responsive on mobile */
 /* Modify the gallery to be more responsive on mobile */
 .gallery {
     position: relative;
@@ -113,9 +111,9 @@
     flex-wrap: wrap; /* Allow multiple images to wrap */
     gap: 10px;
     justify-content: center;
+    margin: 0 auto;  /* Center the gallery */
 }
 
-/* Gallery image styling */
 .gallery img {
     position: absolute;
     max-width: 90%;
@@ -125,61 +123,73 @@
     transition: opacity 1s ease-in-out, transform 1s ease;
 }
 
+/* Mobile Styles - Less than 768px */
 @media (max-width: 768px) {
-    /* Adjust gallery on smaller screens */
+    body {
+        background-size: auto;
+    }
+
+    /* Gallery section */
     .gallery {
-        height: auto;  /* Allow the gallery height to adjust based on the content */
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: column; /* Stack images vertically on mobile */
+        justify-content: flex-start;
         align-items: center;
+        height: auto;  /* Allow gallery height to adjust dynamically */
     }
-    
-    /* Ensure images scale appropriately */
+
     .gallery img {
-        max-width: 100%;  /* Ensure images take up 100% width */
-        max-height: none; /* Remove max-height to allow proper scaling */
+        width: 100%;  /* Ensure images take up 100% width */
+        height: auto;  /* Maintain aspect ratio */
         opacity: 1; /* Keep images visible */
+        max-width: 100%; /* No limit on image width */
+    }
+
+    /* Disable animations for mobile devices */
+    .animated-section {
+        animation: none;
+    }
+
+    /* Adjust navigation for smaller screens */
+    nav {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
     }
 }
-@media (max-width: 768px) {
-  .animated-section {
-    animation: none;
-  }
-}
 
-
+/* Larger Screen (Desktop) Adjustments */
 @media (min-width: 769px) {
-    /* Adjust gallery on larger screens (desktop) */
     .gallery {
-        height: 300px;  /* Ensure a fixed height for desktop */
+        height: 300px;  /* Fixed height for larger screens */
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     .gallery img {
-        max-width: 80%; /* Limit image width to 80% of the gallery container */
+        max-width: 80%; /* Limit image width to 80% */
         max-height: 90%; /* Limit image height */
     }
 }
 
+.gallery img.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
 
+.video-section {
+    margin: 30px 0;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        .gallery img.active {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        .video-section {
-            margin: 30px 0;
-            padding: 20px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .video-section video {
+.video-section video {
     width: auto;
     height: auto;
     max-height: 100vh;
@@ -189,26 +199,25 @@
     margin: auto;
     transform: rotate(0deg);
 }
-        
 
-        button {
-            display: inline-block;
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
+button {
+    display: inline-block;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
 
-        button:hover {
-            background: #0056b3;
-            transform: scale(1.1);
-        }
+button:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
 
-        footer {
+footer {
     text-align: center;
     background-color: #333;
     color: #fff;
@@ -231,7 +240,6 @@
     color: #1da1f2; /* Blue color for hover effect */
 }
 
-
 .registration-page {
     display: none;
     flex-direction: column;
@@ -250,81 +258,84 @@
     display: flex;
 }
 
-        .registration-form {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            animation: slideIn 0.5s ease-out;
-        }
+.registration-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+}
 
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
 
-        .registration-form h2 {
-            margin-bottom: 20px;
-        }
+.registration-form h2 {
+    margin-bottom: 20px;
+}
 
-        .registration-form input {
-            width: calc(100% - 20px);
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
+.registration-form input {
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
 
-        .registration-form button {
-            width: 100%;
-            margin-top: 10px;
-        }
+.registration-form button {
+    width: 100%;
+    margin-top: 10px;
+}
 
-        .close-btn {
-            background: #e74c3c;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
+.close-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 
-        .close-btn:hover {
-            background: #c0392b;
-        }
+.close-btn:hover {
+    background: #c0392b;
+}
 
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
     body {
         background-size: auto;
     }
 }
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         display: none;
     }
+
     nav.active {
         display: flex;
     }
 }
+
 @media (max-width: 768px) {
-  .our-section img {
-    width: 100%;
-    height: auto;
-  }
+    .our-section img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -359,12 +370,31 @@ img {
     const images = document.querySelectorAll(`#${sectionId} .gallery img`);
     let current = 0;
 
+    // Log to check if images are being detected on mobile
+    console.log('Images in gallery:', images);
+
+    // Initially display the first image with fade-in
+    images[current].style.opacity = 1;
+    images[current].style.transform = 'scale(1)';
+    
+    // Set interval to change images every 3 seconds
     setInterval(() => {
-        images[current].classList.remove('active');
+        // Log to track image changes
+        console.log('Changing to image:', current);
+
+        // Remove the "active" class from the current image (fading it out)
+        images[current].style.opacity = 0;
+        images[current].style.transform = 'scale(0.95)'; 
+
+        // Move to the next image in the gallery
         current = (current + 1) % images.length;
-        images[current].classList.add('active');
+
+        // Set the next image to fade in and animate
+        images[current].style.opacity = 1;
+        images[current].style.transform = 'scale(1)';
     }, 3000);
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     startGalleryAnimation('about');
@@ -376,6 +406,13 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('.menu-toggle').addEventListener('click', () => {
     document.querySelector('nav').classList.toggle('active');
 });
+window.addEventListener('load', function() {
+    const images = document.querySelectorAll('.gallery img');
+    images.forEach(img => {
+        img.classList.add('active');
+    });
+});
+
 
 
 
@@ -408,7 +445,8 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
         <h2>About Us</h2>
         <p>At Innovators Grammar School, we focus on holistic development and excellence in education.</p>
         <div class="gallery about-gallery">
-            <img src="TIGS final prospectus_page-0001.jpg" alt="About Image 1" class="active">
+            <img src="TIGS final prospectus_page-0001.jpg" alt="About Image 1" onload="console.log('Image loaded!')" class="active">
+
             <img src="TIGS final prospectus_page-0002.jpg" alt="About Image 2">
             <img src="TIGS final prospectus_page-0003.jpg" alt="About Image 3">
             <img src="TIGS final prospectus_page-0004.jpg" alt="About Image 2">
@@ -433,7 +471,8 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
         <section id="Faculties" class="section">
             <h2>Our Faculties</h2>
             <div class="gallery">
-                <img src="fac 10.jpg" alt="Facility 1" class="active">
+                <img src="fac 10.jpg" alt="Facility 1" onload="console.log('Image loaded!')" class="active">
+
                 <img src="fac 11.jpg" alt="Facility 2">
                 <img src="faci 00.jpg" alt="Facility 3">
                 <img src="faci.jpg" alt="Facility 4">
@@ -452,7 +491,8 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
         <section id="pride" class="section">
             <h2>Our Pride</h2>
             <div class="gallery">
-                <img src="pride 99.jpg" alt="Pride 1" class="active">
+                <img src="pride 99.jpg" alt="Pride 1" onload="console.log('Image loaded!')" class="active">
+
                 <img src="pride 4.jpg" alt="Pride 2">
                 <img src="pride 3.jpg" alt="Pride 3">
                 <img src="pride 2.jpg" alt="Pride 4">
@@ -466,7 +506,7 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
         <section id="video" class="video-section">
             <h2>Winter Festival</h2>
             <video controls autoplay loop muted>
-                <source src="vide].mp4" type="video/mp4">
+                <source src="video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </section>
