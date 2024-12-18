@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovators-Grammar-School</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('background1.jpg') no-repeat center center;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+            animation: backgroundCycle 25s infinite;
+        }
+
+        @keyframes backgroundCycle {
+            0% { background: url(building.jpg) no-repeat center center fixed; background-size: cover; }
+            25% { background: url(stud\ 3.jpg) no-repeat center center fixed; background-size: cover; }
+            50% { background: url(onwers.jpg) no-repeat center center fixed; background-size: cover; }
+            75% { background: url(bak.jpg) no-repeat center center fixed; background-size: cover; }
+            100% { background: url(library.jpg) no-repeat center center fixed; background-size: cover; }
+        }
+
+        header {
+            display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap; /* Added to allow wrapping for small screens */
+        }
+
+        header img {
+            height: 80px;
+        }
+
+        nav {
+            display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+        }
+
+        nav a {
+            color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #007BFF;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+        }
+
+        nav a:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .section:hover {
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+
+        /* Modify the gallery to be more responsive on mobile */
+/* Modify the gallery to be more responsive on mobile */
+.gallery {
+    position: relative;
+    height: auto;  /* Ensure the gallery adapts its height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow multiple images to wrap */
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Gallery image styling */
+.gallery img {
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease;
+}
+
+@media (max-width: 768px) {
+    /* Adjust gallery on smaller screens */
+    .gallery {
+        height: auto;  /* Allow the gallery height to adjust based on the content */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Ensure images scale appropriately */
+    .gallery img {
+        max-width: 100%;  /* Ensure images take up 100% width */
+        max-height: none; /* Remove max-height to allow proper scaling */
+        opacity: 1; /* Keep images visible */
+    }
+}
+@media (max-width: 768px) {
+  .animated-section {
+    animation: none;
+  }
+}
+
+
+@media (min-width: 769px) {
+    /* Adjust gallery on larger screens (desktop) */
+    .gallery {
+        height: 300px;  /* Ensure a fixed height for desktop */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallery img {
+        max-width: 80%; /* Limit image width to 80% of the gallery container */
+        max-height: 90%; /* Limit image height */
+    }
+}
+
+
+
+        .gallery img.active {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .video-section {
+            margin: 30px 0;
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section video {
+    width: auto;
+    height: auto;
+    max-height: 100vh;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    transform: rotate(0deg);
+}
+        
+
+        button {
+            display: inline-block;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+
+        footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1da1f2; /* Blue color for hover effect */
+}
+
+
+.registration-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.registration-page.active {
+    display: flex;
+}
+
+        .registration-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .registration-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .registration-form input {
+            width: calc(100% - 20px);
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .registration-form button {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .close-btn {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .close-btn:hover {
+            background: #c0392b;
+        }
+
+        @media (max-width: 768px) {
+    body {
+        background-size: auto;
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        display: none;
+    }
+    nav.active {
+        display: flex;
+    }
+}
+@media (max-width: 768px) {
+  .our-section img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+        
+    </style>
+    <script>
+        function showRegistrationForm() {
+            document.querySelector('.registration-page').classList.add('active');
+        }
+
+        function closeRegistrationForm() {
+            document.querySelector('.registration-page').classList.remove('active');
+        }
+
+        function submitRegistrationForm() {
+            const name = document.querySelector('#student-name').value;
+            const fatherName = document.querySelector('#father-name').value;
+            const registrationDate = document.querySelector('#registration-date').value;
+            const studentClass = document.querySelector('#student-class').value;
+            const registrationForClass = document.querySelector('#registration-for-class').value;
+            const contactNumber = document.querySelector('#contact-number').value;
+
+            if (name && fatherName && registrationDate && studentClass && registrationForClass && contactNumber) {
+                alert(`Thank you, ${name}! Your registration has been submitted.`);
+                document.querySelector('.registration-page').classList.remove('active');
+            } else {
+                alert("Please fill out all fields.");
+            }
+        }
+
+        function startGalleryAnimation(sectionId) {
+    const images = document.querySelectorAll(`#${sectionId} .gallery img`);
+    let current = 0;
+
+    setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+    }, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    startGalleryAnimation('about');
+    startGalleryAnimation('Faculties');
+    startGalleryAnimation('pride'); // Ensure the animation is applied to the mobile view too
+});
+
+
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('active');
+});
+
+
+
+    </script>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="logo">
+                <img src="WhatsApp Image 2024-12-10 at 23.02.47_5a30dfdd.jpg" alt="School Logo" style="height: 80px;">
+            </div>
+            <h1 style="color: white; font-size: 1.8rem; margin: 0;">The Innovators Grammar School</h1>
+        </div>
+        <nav>
+            <a href="#about"><img src="about-icon.png" alt="About" class="nav-icon"></a>
+            <a href="#facility"><img src="facility-icon.png" alt="Faculties" class="nav-icon"> </a>
+            <a href="#registration"><img src="registration-icon.png" alt="Registration" class="nav-icon"> </a>
+            <a href="#ourpride"><img src="ourpride-icon.png" alt="Our Pride" class="nav-icon"> </a>
+            <a href="#contact"><img src="contact-icon.png" alt="Contact" class="nav-icon"> </a>
+        </nav>
+    </header>
+    
+
+    <section class="hero">
+        <h2>Fostering an inclusive culture of innovation, creativity, curiosity, and confidence.</h2>
+        <p>Our vision is an innovative teaching community that embraces new ideas, catalyzes innovative instructional practices, and creates a vibrant and modern learning environment where every student can thrive.</p>
+    </section>
+
+    <div id="about" class="container section">
+        <h2>About Us</h2>
+        <p>At Innovators Grammar School, we focus on holistic development and excellence in education.</p>
+        <div class="gallery about-gallery">
+            <img src="TIGS final prospectus_page-0001.jpg" alt="About Image 1" class="active">
+            <img src="TIGS final prospectus_page-0002.jpg" alt="About Image 2">
+            <img src="TIGS final prospectus_page-0003.jpg" alt="About Image 3">
+            <img src="TIGS final prospectus_page-0004.jpg" alt="About Image 2">
+            <img src="TIGS final prospectus_page-0005.jpg" alt="About Image 3">
+            <img src="TIGS final prospectus_page-0006.jpg" alt="About Image 2">
+            <img src="TIGS final prospectus_page-0007.jpg" alt="About Image 3">
+            <img src="TIGS final prospectus_page-0008.jpg" alt="About Image 2">
+            <img src="TIGS final prospectus_page-0009.jpg" alt="About Image 3">
+            <img src="TIGS final prospectus_page-0010.jpg" alt="About Image 2">
+            <img src="TIGS final prospectus_page-0011.jpg" alt="About Image 3">
+            <img src="TIGS final prospectus_page-0012.jpg" alt="About Image 2">
+            <img src="TIGS final prospectus_page-0013.jpg" alt="About Image 3">
+            <img src="TIGS final prospectus_page-0014.jpg" alt="About Image 2">
+            <img src="TIGS final prospectus_page-0015.jpg" alt="About Image 3">
+            <img src="TIGS final prospectus_page-0017.jpg" alt="About Image 2">
+                    
+        </div>
+    </div>
+    
+        </section>
+
+        <section id="Faculties" class="section">
+            <h2>Our Faculties</h2>
+            <div class="gallery">
+                <img src="fac 10.jpg" alt="Facility 1" class="active">
+                <img src="fac 11.jpg" alt="Facility 2">
+                <img src="faci 00.jpg" alt="Facility 3">
+                <img src="faci.jpg" alt="Facility 4">
+                <img src="onwers.jpg" alt="Facility 5">
+                <img src="fac 55.jpg" alt="Facility 6">
+                <img src="fac99.jpg" alt="Facility 7">
+            </div>
+        </section>
+
+        <section id="registration" class="section">
+            <h2>Registration</h2>
+            <p>Register now to secure your child&#39;s future with us. Contact our admissions office for more details.</p>
+            <button onclick="showRegistrationForm()">Register Now</button>
+        </section>
+
+        <section id="pride" class="section">
+            <h2>Our Pride</h2>
+            <div class="gallery">
+                <img src="pride 99.jpg" alt="Pride 1" class="active">
+                <img src="pride 4.jpg" alt="Pride 2">
+                <img src="pride 3.jpg" alt="Pride 3">
+                <img src="pride 2.jpg" alt="Pride 4">
+                <img src="pri.jpg" alt="Pride 5">
+                <img src="prid.jpg" alt="Pride 6">
+                <img src="pride 1.jpg" alt="Pride 7">
+                <img src="WhatsApp Image 2024-12-11 at 00.03.01_4c171869.jpg" alt="Pride 8">
+            </div>
+        </section>
+
+        <section id="video" class="video-section">
+            <h2>Winter Festival</h2>
+            <video controls autoplay loop muted>
+                <source src="vide].mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>
+                Email: <a href="mailto:contact@ourschool.com">Tigseducation@gmail.com</a><br>
+                Phone: <a href="tel:056-3612990">056-3612990</a><br>
+                    Phone: <a href="tel:03328875758">03328875758</a><br>   
+                        Phone: <a href="tel:03331328877">03331328877</a><br> 
+                            Phone: <a href="tel:03333348111">03333348111</a><br> 
+            </p>
+            <p>
+                Address: 
+                <a href="https://www.google.com/maps?q=123+Education+Lane,+Knowledge+City" target="_blank">
+                    6-B Shami Road, Civil Lines, Sheikhupura
+                </a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Our School. All rights reserved.</p>
+        <div class="social-icons">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/TheInnovatorsGrammarSchool?mibextid=LQQJ4d" >
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/theinnovatorsgrammarschool.skp?igsh=bXYza3JkbWs1aWU5" >
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com/@tigs-skp?si=b35librvFs7ghIvT" target="_blank">
+            <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </footer>
+    
+    <div class="registration-page">
+        <form class="registration-form" action="send_email.php" method="POST">
+            <button class="close-btn" type="button" onclick="closeRegistrationForm()">&times;</button>
+            <h2>Register Now</h2>
+            <input type="text" id="student-name" name="student_name" placeholder="Enter Student Name" required>
+            <input type="text" id="father-name" name="father_name" placeholder="Enter Father's Name" required>
+            <input type="date" id="registration-date" name="registration_date" placeholder="Date of Registration" required>
+            <input type="text" id="student-class" name="student_class" placeholder="Enter Current Class" required>
+            <input type="text" id="registration-for-class" name="registration_for_class" placeholder="Enter Registration for Class" required>
+            <input type="text" id="contact-number" name="contact_number" placeholder="Enter Contact Number" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>
